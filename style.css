@@ -1,1 +1,200 @@
 /* Add your CSS here */
+
+/* Hero Section Styles */
+header {
+  /* Intel blue background */
+  background-color: #0071c5;
+  /* Add some space above and below */
+  padding: 40px 0;
+  /* Center the content horizontally */
+  text-align: center;
+}
+
+/* Logo styling */
+header img {
+  /* Set a reasonable width for the logo */
+  width: 120px;
+  /* Add some space below the logo */
+  margin-bottom: 20px;
+}
+
+/* Main headline styling */
+header h1 {
+  /* White text for contrast */
+  color: #fff;
+  /* Make the headline bold and large */
+  font-size: 2.2em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Subheading / description styling */
+header p {
+  /* Light gray text for readability */
+  color: #e3e3e3;
+  /* Slightly larger text */
+  font-size: 1.1em;
+  /* Add space below */
+  margin-bottom: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Use a clean, modern font for the whole page */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; /* Intel uses Segoe UI */
+  background: #f0f4f8; /* Light background for Intel feel */
+  color: #222; /* Dark gray for main text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Make sure timeline card images are not too big */
+section img {
+  /* Set the maximum width to 100% of the card */
+  max-width: 100%;
+  /* Set a wider fixed width for consistency with new card size */
+  width: 340px;
+  /* Keep the image height in proportion */
+  height: auto;
+  /* Add some space below the image */
+  margin-bottom: 10px;
+  /* Center the image in the card */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Timeline container styles */
+.timeline-container {
+  /* Use flexbox to arrange cards in a row */
+  display: flex;
+  flex-direction: row;
+  /* Allow horizontal scrolling if content is too wide */
+  overflow-x: auto;
+  /* Add some space below the timeline */
+  margin-bottom: 30px;
+  /* Add a little padding for nicer look */
+  padding: 20px 0;
+  /* Prevent cards from wrapping to next line on large screens */
+  white-space: nowrap;
+  /* Add a light background for contrast */
+  background: #f5faff;
+  /* Snap horizontally, required */
+  scroll-snap-type: x mandatory;
+}
+
+/* Each timeline card */
+.timeline-card {
+  /* Make each card much wider so only about 4 fit at once */
+  width: 500px;
+  flex: 0 0 500px; /* Tell flexbox to keep this width */
+  /* Add some space between cards */
+  margin: 0 12px;
+  /* Add a white background */
+  background: #fff;
+  /* Rounded corners */
+  border-radius: 10px;
+  /* Add a subtle shadow */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  /* Add padding inside the card */
+  padding: 18px 12px;
+  /* Use flex column for card content */
+  display: flex;
+  flex-direction: column;
+  /* Add transition for hover effect */
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden; /* Prevent content from overflowing out of the card */
+  box-sizing: border-box; /* Include padding and border in width */
+  /* Snap the start of each card to the container */
+  scroll-snap-align: start;
+}
+
+/* Headings inside timeline cards */
+.timeline-card h2 {
+  /* Intel blue for years */
+  color: #0071c5;
+  font-size: 1.4em;
+  margin: 0 0 4px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.timeline-card h3 {
+  /* Slightly darker blue for event titles */
+  color: #005a9e;
+  font-size: 1.1em;
+  margin: 0 0 8px 0;
+  font-weight: normal;
+}
+
+/* Timeline card paragraph */
+.timeline-card p {
+  /* Allow text to wrap to the next line if it's too long */
+  white-space: normal;
+  /* Optional: add a little spacing for readability */
+  margin: 10px 0 0 0;
+  color: #333;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Add spacing between elements in the card */
+.timeline-card h2,
+.timeline-card h3,
+.timeline-card p,
+.timeline-card .card-details {
+  /* Add a little space below each element */
+  margin-bottom: 8px;
+}
+
+/* Hide extra details by default */
+.card-details {
+  display: none;
+  font-size: 0.95em;
+  color: #444;
+  background: #eaf4fb;
+  border-radius: 6px;
+  padding: 8px;
+  margin-top: 8px;
+  /* Subtle border for separation */
+  border-left: 3px solid #0071c5;
+  word-break: break-word; /* Break long words if needed */
+  overflow-wrap: break-word; /* Ensure text wraps to the next line */
+}
+
+/* Show extra details when hovering over the card */
+.timeline-card:hover .card-details {
+  display: block;
+}
+
+/* Hover effect for cards */
+.timeline-card:hover {
+  /* Slightly lift the card */
+  transform: translateY(-6px) scale(1.03);
+  /* Make the shadow a bit stronger */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.13);
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  .timeline-container {
+    /* Stack cards vertically */
+    flex-direction: column;
+    /* Remove horizontal scroll */
+    overflow-x: visible;
+    /* Remove white-space nowrap */
+    white-space: normal;
+    /* Add some horizontal padding */
+    padding: 10px;
+  }
+  .timeline-card {
+    /* Make cards take full width */
+    width: 100%;
+    /* Add space below each card */
+    margin: 0 0 18px 0;
+    /* Remove inline-block for stacking */
+    display: block;
+  }
+}
