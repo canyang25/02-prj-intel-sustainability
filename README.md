@@ -18,9 +18,3 @@ Built with HTML, CSS, and JavaScript to highlight Intel’s progress toward rene
 - JavaScript (ES6)
 
 ---
-
-## Run Locally
-```bash
-git clone https://github.com/<your-username>/intel-sustainability.git
-cd intel-sustainability
-open index.html
